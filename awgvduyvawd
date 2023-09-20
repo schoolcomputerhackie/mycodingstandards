@@ -1,0 +1,16 @@
+app.clicks=0
+app.Label=Label('Clicks: '+str(app.clicks),200,200)
+app.true = False
+app.Steps = 0
+
+app.stepsPerSecond = 1
+app.true=True
+def onStep():
+    if app.true==True:
+        app.Steps+=1
+    
+def onMousePress(mousex,mousey):
+    if app.true ==True:
+        if app.Steps < 1:
+            app.clicks+=1
+            app.Label.value = 'Clicks: '+str(app.clicks)
